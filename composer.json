@@ -1,0 +1,19 @@
+{
+    "name": "danrspencer/phpunit-expect-syntax",
+    "type": "library",
+    "description": "Expect syntax for PHPUnit assertions",
+    "keywords": ["testing","phpunit","expect"],
+    "homepage": "https://github.com/danrspencer/phpunit-expect-syntax",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dan Spencer",
+            "email": "danrspen@gmail.com",
+            "homepage": "https://github.com/danrspencer",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    }
+}

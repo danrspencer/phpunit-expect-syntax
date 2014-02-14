@@ -42,3 +42,11 @@ function it_delegates_to_a_mock() {
 }
 ```
 
+Expect Syntax also adds improved syntax for controlling mocks:
+
+``` php
+/** @test */
+function it_delegates_to_a_mock() {
+	setMock($mock, 'function')->toReturn('value');
+}
+```

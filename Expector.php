@@ -56,4 +56,13 @@ class Expector
     {
         \PHPUnit_Framework_Assert::assertInstanceOf($expected, $this->_value);
     }
+
+    // -- functions for Mocks --
+    public function toBeCalled(PHPUnit_Framework_MockObject_Matcher_InvokedCount $invokeMatcher = null)
+    {
+        $invokeMatcher = $invokeMatcher ?: new PHPUnit_Framework_MockObject_Matcher_InvokedAtLeastOnce();
+
+        $this->actual->expects($invokeMatcher)
+                     ->method($this->functionName);
+    }
 }

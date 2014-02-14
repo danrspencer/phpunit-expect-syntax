@@ -38,7 +38,7 @@ function it_tests_something() {
 
 /** @test */
 function it_delegates_to_a_mock() {
-	expect(mock, 'function')->toBeCalled();
+	expect($mock, 'function')->toBeCalled();
 }
 ```
 

@@ -73,8 +73,9 @@ class Expector
         $invokeMatcher = new PHPUnit_Framework_MockObject_Matcher_InvokedAtLeastOnce();
         $args = func_get_args();
 
-        $this->actual->expects($invokeMatcher)
-                     ->method($this->functionName)
-                     ->with($args);
+        $mocker = $this->actual->expects($invokeMatcher)
+                               ->method($this->functionName);
+
+        call_user_func_array([$mocker, 'with'], $args);
     }
 }

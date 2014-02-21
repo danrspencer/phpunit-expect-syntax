@@ -76,6 +76,6 @@ class Expector
         $mocker = $this->actual->expects($invokeMatcher)
                                ->method($this->functionName);
 
-        call_user_func_array([$mocker, 'with'], $args);
+        call_user_func_array(array($mocker, 'with'), $args);
     }
 }

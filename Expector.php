@@ -67,4 +67,14 @@ class Expector
         $this->actual->expects($invokeMatcher)
                      ->method($this->functionName);
     }
+    
+    public function toBeCalledWith()
+    {
+        $invokeMatcher = new PHPUnit_Framework_MockObject_Matcher_InvokedAtLeastOnce();
+        $args = func_get_args();
+
+        $this->actual->expects($invokeMatcher)
+                     ->method($this->functionName)
+                     ->with($args);
+    }
 }

@@ -15,14 +15,14 @@ class Expector
         $this->message = $message;
     }
 
-    public function arrayToHaveKey(array $array)
+    public function arrayToHaveKey($key)
     {
-        \PHPUnit_Framework_Assert::assertArrayHasKey($this->actual, $array);
+        \PHPUnit_Framework_Assert::assertArrayHasKey($key, $this->actual);
     }
 
-    public function arrayToNotHaveKey(array $array)
+    public function arrayToNotHaveKey($key)
     {
-        \PHPUnit_Framework_Assert::assertArrayNotHasKey($this->actual, $array);
+        \PHPUnit_Framework_Assert::assertArrayNotHasKey($key, $this->actual);
     }
 
     public function toEqual($expected)

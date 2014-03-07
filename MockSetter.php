@@ -22,4 +22,11 @@ class MockSetter {
                    ->method($this->functionName)
                    ->will($stub);
     }
+
+    function toSpy()
+    {
+        $matcher = new PHPUnit_Framework_MockObject_Matcher_AnyInvokedCount();
+
+        $this->mock->expects($matcher);
+    }
 } 

@@ -72,10 +72,68 @@ class Expector
     {
         $invokeMatcher = new PHPUnit_Framework_MockObject_Matcher_InvokedAtLeastOnce();
         $args = func_get_args();
+        $mock = $this->actual;
 
-        $mocker = $this->actual->expects($invokeMatcher)
-                               ->method($this->functionName);
+        $mocker = $mock->expects($invokeMatcher)
+                       ->method($this->functionName);
 
-        call_user_func_array(array($mocker, 'with'), $args);
+        $argMatchers = array();
+
+        if (sizeof($args) > 0) {
+            foreach ($args as $arg) {
+                $argMatchers[] = new PHPUnit_Framework_Constraint_IsIdentical($arg);
+            }
+        }
+
+        call_user_func_array(array($mocker, 'with'), $argMatchers);
+    }
+
+    public function toHaveBeenCalledWith()
+    {
+        $args = func_get_args();
+        $mock = $this->actual;
+
+        $invocationMocker = $this->getPrivateProperty($mock, '__phpunit_invocationMocker');
+        $matchers = $this->getPrivateProperty($invocationMocker, 'matchers');
+
+        $invocationMatcher = $matchers[0]->invocationMatcher;
+        $invocations = $this->getPrivateProperty($invocationMatcher, 'invocations');
+
+        $errors = array();
+
+        foreach ($invocations as $invocation) {
+            try {
+                $parameters = $invocation->parameters;
+                $this->testArgs($parameters, $args);
+            } catch (\Exception $ex) {
+                $errors[] = $ex;
+            }
+        }
+
+        if (sizeof($errors) === sizeof($invocations)) {
+            throw $errors[0];
+        }
+    }
+
+    private function testArgs($parameters, $args)
+    {
+        foreach($args as $key => $value) {
+            if ($value instanceof PHPUnit_Framework_Constraint) {
+                $constraint = $value;
+            } else {
+                $constraint = new PHPUnit_Framework_Constraint_IsIdentical($value);
+            }
+
+            $constraint->evaluate($parameters[$key]);
+        }
+    }
+
+    private function getPrivateProperty($object, $propertyName)
+    {
+        $reflect = new ReflectionClass($object);
+        $property = $reflect->getProperty($propertyName);
+        $property->setAccessible(true);
+
+        return $property->getValue($object);
     }
 }

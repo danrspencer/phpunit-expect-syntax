@@ -27,6 +27,7 @@ class MockSetter {
     {
         $matcher = new PHPUnit_Framework_MockObject_Matcher_AnyInvokedCount();
 
-        $this->mock->expects($matcher);
+        $this->mock->expects($matcher)
+                   ->method($this->functionName);
     }
 } 

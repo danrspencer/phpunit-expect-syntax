@@ -102,6 +102,11 @@ class Expector
         $errors = array();
 
         foreach ($invocations as $invocation) {
+
+            if ($invocation->methodName !== $this->functionName) {
+                continue;
+            }
+
             try {
                 $parameters = $invocation->parameters;
                 $this->testArgs($parameters, $args);

@@ -23,6 +23,17 @@ class MockSetter {
                    ->will($stub);
     }
 
+    function toCallFake($callback)
+    {
+        $matcher = new PHPUnit_Framework_MockObject_Matcher_AnyInvokedCount();
+        $stub = new PHPUnit_Framework_MockObject_Stub_ReturnCallback($callback);
+
+        $this->mock->expects($matcher)
+                   ->method($this->functionName)
+                   ->will($stub);
+    }
+
+
     function toSpy()
     {
         $matcher = new PHPUnit_Framework_MockObject_Matcher_AnyInvokedCount();

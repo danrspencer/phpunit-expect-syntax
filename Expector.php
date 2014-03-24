@@ -34,6 +34,11 @@ class Expector
     {
         \PHPUnit_Framework_Assert::assertObjectHasAttribute($attributeName, $this->actual);
     }
+    
+    public function toNotHaveAttribute($attributeName)
+    {
+        \PHPUnit_Framework_Assert::assertObjectNotHasAttribute($attributeName, $this->actual);
+    }
 
     public function toBeTrue()
     {

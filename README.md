@@ -9,7 +9,7 @@ A wrapper for PHPUnit which allows expect assertion syntax inspired by JavaScrip
 
 ### Step 1. Install via Composer
 
-The preferred way to install this bundle is to rely on Composer. Just add it to your composer.json:
+The preferred way to install this bundle is via Composer. Just add it to your composer.json:
 
 ``` js
 {
@@ -22,7 +22,7 @@ The preferred way to install this bundle is to rely on Composer. Just add it to 
 
 ### Step 2. Include the expect-syntax.php file
 
-To begin using the syntax you'll need to load in the expect-syntax.php file. This can be done in your PHPUnit bootstrap (recommended) or in invididual tests.
+To begin using the syntax you'll need to include the expect-syntax.php file. This can be done in your PHPUnit bootstrap (recommended) or in invididual tests.
 
 e.g.
 

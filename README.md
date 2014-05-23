@@ -35,6 +35,6 @@ require_once '../vendor/danrspencer/phpunit-expect-syntax/ExpectSyntax.php';
 ``` php
 /** @test */
 function it_tests_something() {
-	expect('this')->toEqual('this');	
+	expect($this)->toEqual($that);	
 }
 ```

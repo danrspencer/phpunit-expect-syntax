@@ -37,9 +37,4 @@ require_once '../vendor/danrspencer/phpunit-expect-syntax/ExpectSyntax.php';
 function it_tests_something() {
 	expect('this')->toEqual('this');	
 }
-
-/** @test */
-function it_delegates_to_a_mock() {
-	expect($mock, 'function')->toBeCalled();
-}
 ```

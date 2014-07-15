@@ -3,15 +3,11 @@
 class Expector
 {
     private $actual;
-    private $functionName;
-
     private $message;
 
-    function __construct($actual, $functionName = null, $message = '')
+    function __construct($actual, $message = '')
     {
         $this->actual = $actual;
-        $this->functionName = $functionName;
-
         $this->message = $message;
     }
 

@@ -2,7 +2,7 @@
 
 require_once 'Expector.php';
 
-function expect($actual, $functionName = null)
+function expect($actual)
 {
-    return new Expector($actual, $functionName);
+    return new Expector($actual);
 }

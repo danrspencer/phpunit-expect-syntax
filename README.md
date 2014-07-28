@@ -3,7 +3,7 @@ phpunit-expect-syntax
 
 A wrapper for PHPUnit which allows expect assertion syntax inspired by JavaScript's Jasmine.
 
-[Note: currently incomplete - if I'm missing a matcher you need create an issue or pull request]
+**Note: currently incomplete - if I'm missing a matcher you need create an issue or pull request**
 
 ## Installation
 

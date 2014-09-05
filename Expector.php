@@ -25,6 +25,11 @@ class Expector
     {
         \PHPUnit_Framework_Assert::assertEquals($expected, $this->actual);
     }
+    
+    public function toNotEqual($expected)
+    {
+        \PHPUnit_Framework_Assert::assertNotEquals($expected, $this->actual);
+    }
 
     public function toHaveAttribute($attributeName)
     {

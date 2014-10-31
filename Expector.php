@@ -60,6 +60,11 @@ class Expector
     {
         \PHPUnit_Framework_Assert::assertContains($needle, $this->actual);
     }
+    
+    public function toBe($expected)
+    {
+        \PHPUnit_Framework_Assert::assertSame($expected, $this->actual);
+    }
 
     public function toBeInstanceOf($expected)
     {

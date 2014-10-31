@@ -65,5 +65,10 @@ class Expector
     {
         \PHPUnit_Framework_Assert::assertInstanceOf($expected, $this->actual);
     }
+    
+    public function classToHaveAttribute($attributeName)
+    {
+        \PHPUnit_Framework_Assert::assertClassHasAttribute($$attributeName, $this->actual);
+    }
 
 }

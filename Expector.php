@@ -73,7 +73,16 @@ class Expector
     
     public function classToHaveAttribute($attributeName)
     {
-        \PHPUnit_Framework_Assert::assertClassHasAttribute($$attributeName, $this->actual);
+        \PHPUnit_Framework_Assert::assertClassHasAttribute($attributeName, $this->actual);
     }
 
+    public function toBeGreaterThan($expected)
+    {
+        \PHPUnit_Framework_Assert::assertGreaterThan($expected, $this->actual);
+    }
+    
+    public function toBeLessThan($expected)
+    {
+        \PHPUnit_Framework_Assert::assertLessThan($expected, $this->actual);
+    }
 }

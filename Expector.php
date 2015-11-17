@@ -61,7 +61,7 @@ class Expector
         \PHPUnit_Framework_Assert::assertContains($needle, $this->actual);
     }
 
-    public function toContainAll($expected)
+    public function toContainAll(array $expected)
     {
         \PHPUnit_Framework_Assert::assertEquals($expected, $this->actual, "\$canonicalize = true", $delta = 0.0, $maxDepth = 10, $canonicalize = true);
     }

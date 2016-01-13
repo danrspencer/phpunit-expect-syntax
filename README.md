@@ -15,7 +15,7 @@ The preferred way to install this bundle is via Composer. Just add it to your co
 {
     "require": {
         // ...
-        "danrspencer/phpunit-expect-syntax": "dev-master"
+        "danrspencer/phpunit-expect-syntax": "1.0.0"
     }
 }
 ``` 

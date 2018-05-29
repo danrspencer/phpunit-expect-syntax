@@ -13,81 +13,81 @@ class Expector
 
     public function arrayToHaveKey($key)
     {
-        \PHPUnit_Framework_Assert::assertArrayHasKey($key, $this->actual);
+        \PHPUnit\Framework\Assert::assertArrayHasKey($key, $this->actual);
     }
 
     public function arrayToNotHaveKey($key)
     {
-        \PHPUnit_Framework_Assert::assertArrayNotHasKey($key, $this->actual);
+        \PHPUnit\Framework\Assert::assertArrayNotHasKey($key, $this->actual);
     }
 
     public function classToHaveAttribute($attributeName)
     {
-        \PHPUnit_Framework_Assert::assertClassHasAttribute($attributeName, $this->actual);
+        \PHPUnit\Framework\Assert::assertClassHasAttribute($attributeName, $this->actual);
     }
 
     public function toBe($expected)
     {
-        \PHPUnit_Framework_Assert::assertSame($expected, $this->actual);
+        \PHPUnit\Framework\Assert::assertSame($expected, $this->actual);
     }
 
     public function toBeFalse()
     {
-        \PHPUnit_Framework_Assert::assertFalse($this->actual);
+        \PHPUnit\Framework\Assert::assertFalse($this->actual);
     }
 
     public function toBeGreaterThan($expected)
     {
-        \PHPUnit_Framework_Assert::assertGreaterThan($expected, $this->actual);
+        \PHPUnit\Framework\Assert::assertGreaterThan($expected, $this->actual);
     }
 
     public function toBeInstanceOf($expected)
     {
-        \PHPUnit_Framework_Assert::assertInstanceOf($expected, $this->actual);
+        \PHPUnit\Framework\Assert::assertInstanceOf($expected, $this->actual);
     }
 
     public function toBeLessThan($expected)
     {
-        \PHPUnit_Framework_Assert::assertLessThan($expected, $this->actual);
+        \PHPUnit\Framework\Assert::assertLessThan($expected, $this->actual);
     }
 
     public function toBeTrue()
     {
-        \PHPUnit_Framework_Assert::assertTrue($this->actual);
+        \PHPUnit\Framework\Assert::assertTrue($this->actual);
     }
 
     public function toContain($needle)
     {
-        \PHPUnit_Framework_Assert::assertContains($needle, $this->actual);
+        \PHPUnit\Framework\Assert::assertContains($needle, $this->actual);
     }
 
     public function toContainAll(array $expected)
     {
-        \PHPUnit_Framework_Assert::assertEquals($expected, $this->actual, "\$canonicalize = true", $delta = 0.0, $maxDepth = 10, $canonicalize = true);
+        \PHPUnit\Framework\Assert::assertEquals($expected, $this->actual, "\$canonicalize = true", $delta = 0.0, $maxDepth = 10, $canonicalize = true);
     }
 
     public function toEqual($expected)
     {
-        \PHPUnit_Framework_Assert::assertEquals($expected, $this->actual);
+        \PHPUnit\Framework\Assert::assertEquals($expected, $this->actual);
     }
 
     public function toHaveAttribute($attributeName)
     {
-        \PHPUnit_Framework_Assert::assertObjectHasAttribute($attributeName, $this->actual);
+        \PHPUnit\Framework\Assert::assertObjectHasAttribute($attributeName, $this->actual);
     }
 
     public function toMatch($regex)
     {
-        \PHPUnit_Framework_Assert::assertRegExp($regex, $this->actual);
+        \PHPUnit\Framework\Assert::assertRegExp($regex, $this->actual);
     }
 
     public function toNotEqual($expected)
     {
-        \PHPUnit_Framework_Assert::assertNotEquals($expected, $this->actual);
+        \PHPUnit\Framework\Assert::assertNotEquals($expected, $this->actual);
     }
 
     public function toNotHaveAttribute($attributeName)
     {
-        \PHPUnit_Framework_Assert::assertObjectNotHasAttribute($attributeName, $this->actual);
+        \PHPUnit\Framework\Assert::assertObjectNotHasAttribute($attributeName, $this->actual);
     }
 }
